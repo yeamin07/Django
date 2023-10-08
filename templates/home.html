@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body bgcolor="aqua">
+    {% for movie in movies %}
+
+    <a href="{% url 'oneMovie' movie.id %}">
+        <h2 align="center">{{movie.name}} </h2><br>
+    </a>
+
+    {% endfor %}
+</body>
+
+</html>

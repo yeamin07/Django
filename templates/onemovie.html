@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onemovie</title>
+</head>
+
+<body bgcolor="aqua">
+    <h2 align="center">{{movie.name}} </h2><br>
+    <h2 align="center">Release Date: {{date}} </h2><br>
+    <h1 align="center" >Actors</h1>
+
+    {% for actor in movie.actors.all %}
+    <a href="{% url 'oneActor' actor.id %}"><p align="center">{{actor.name}}</p></a>
+    {% endfor %}
+
+    <h1 align="center" >Directors</h1>
+    {% for director in movie.directors.all %}
+    <a href="{% url 'oneDirector' director.id %}"><p align="center">{{director.name}}</p></a>
+    {% endfor %}
+
+</body>
+
+</html>
